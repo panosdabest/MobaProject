@@ -43,7 +43,10 @@ MonoBehaviour:
   - InflictPhysicalDamage
   - InflictStatisticalDamage
   - ReceiveDamage
+<<<<<<< HEAD
   - HandleDamage
+=======
+>>>>>>> 663d668468b98b241660ec474c02eca9af10bd1e
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
