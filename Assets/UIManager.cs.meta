@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scripts/MOBA/Heroes/RaycastHandler.cs.meta
+guid: 869b084a03a6022439fc8ffcdd94abe2
+========
+guid: f8765ab4252ee444e894d538415dca55
+>>>>>>>> c4778dd5660d8ba53be9b9f5b90d14e5e12b7f6d:Assets/UIManager.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

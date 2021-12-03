@@ -1,4 +1,4 @@
 public interface IAttacker {
-    void InflictPhysicalDamage(float originalInflictedValue, float damage);
-    void InflictStatisticalDamage(float originalValue, float debuff);
+    void InflictPhysicalDamage(float damage, Hero hero);
+    void InflictStatisticalDamage(float debuff, Hero hero);
 }

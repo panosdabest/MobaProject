@@ -1,6 +1,6 @@
 using UnityEngine;
 [System.Serializable]
-public struct Ability  {
+public struct Ability {
     public string abilityName;
     public GameObject abilityObject;
     public float abilityCoolDown;

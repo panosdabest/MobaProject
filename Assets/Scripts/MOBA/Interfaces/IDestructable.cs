@@ -1,4 +1,4 @@
 public interface IDestructable {
-    void ReceiveDamage(float damage);
+    void HandleDamage(float damage);
     void HandleDeath();
 }
