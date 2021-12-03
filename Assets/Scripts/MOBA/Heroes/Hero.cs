@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-public class HeroOne : Player_MasterClass {
+public class Hero : Player_MasterClass {
     void Start() { }
     // Update is called once per frame
     void Update() { }
@@ -15,5 +13,11 @@ public class HeroOne : Player_MasterClass {
     }
     public override void InflictStatisticalDamage(float originalValue, float debuff) {
         base.InflictStatisticalDamage(originalValue, debuff);
+    }
+    public override void ReceiveDamage(float damage) {
+        base.ReceiveDamage(damage);
+    }
+    public override void HandleDeath() {
+        base.HandleDeath();
     }
 }
