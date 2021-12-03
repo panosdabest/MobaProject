@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 [System.Serializable]
-public class Player_MasterClass : MonoBehaviour, IAttacker {
+public class Player_MasterClass : MonoBehaviour, IAttacker, IDestructable {
     //If someone prefers the struct approach is more than welcome to use it/recommend exclusive use...
     [System.Serializable]
     public struct PlayerData {
@@ -39,7 +38,12 @@ public class Player_MasterClass : MonoBehaviour, IAttacker {
             }
         }
     }
+    [PunRPC]
     public virtual void InflictPhysicalDamage(float originalInflictedValue, float damage) { }
-
+    [PunRPC]
     public virtual void InflictStatisticalDamage(float originalValue, float debuff) { }
+    [PunRPC]
+    public virtual void ReceiveDamage(float damage) { }
+    [PunRPC]
+    public virtual void HandleDeath() { }
 }
