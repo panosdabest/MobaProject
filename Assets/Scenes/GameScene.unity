@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -199,7 +199,6 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
-  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!4 &199835947
@@ -231,6 +230,10 @@ GameObject:
   - component: {fileID: 496108477}
   - component: {fileID: 496108475}
   - component: {fileID: 496108476}
+  - component: {fileID: 496108478}
+  - component: {fileID: 496108479}
+  - component: {fileID: 496108481}
+  - component: {fileID: 496108480}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -314,7 +317,7 @@ Transform:
   m_Children:
   - {fileID: 499646887}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &496108475
 MonoBehaviour:
@@ -328,28 +331,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cfc37097b3b8ac4cac7053e7e585300, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abillities:
-  - abilityName: Heal
-    abilityObject: {fileID: 0}
-    abilityCoolDown: 0
-    damagePoints: 0
-  - abilityName: Fire
-    abilityObject: {fileID: 0}
-    abilityCoolDown: 0
-    damagePoints: 0
-  playerData:
-    name: Kostas
-    health: 100
-    mana: 50
-    attackPoints: 30
-    armor: 15
-    playerImage: {fileID: 0}
-  playerCamera: {fileID: 0}
-  playerState: 0
-  detection: {fileID: 496108477}
-  detectedObject: 0
-  debuffPoints: 0
-  activeHero: 1
 --- !u!114 &496108476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -362,13 +343,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObservedComponentsFoldoutOpen: 0
+  ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
   Synchronization: 3
   OwnershipTransfer: 0
-  observableSearch: 2
-  ObservedComponents: []
+  observableSearch: 0
+  ObservedComponents:
+  - {fileID: 496108478}
   sceneViewId: 1
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -389,6 +371,80 @@ MonoBehaviour:
     m_Bits: 64
   maxDistance: 10
   detectedObject: 0
+--- !u!114 &496108478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 496108470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
+--- !u!114 &496108479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 496108470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f528f15a8b50dc4c9651887dee131e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abillities: []
+  playerData:
+    level: 5
+    name: 
+    health: 111
+    mana: 111
+    attackPoints: 15
+    armor: 11
+    playerImage: {fileID: 0}
+  playerCamera: {fileID: 499646886}
+  playerState: 0
+  detection: {fileID: 496108477}
+  detectedObject: 0
+  debuffPoints: 0
+  activeHero: 1
+--- !u!114 &496108480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 496108470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd08475b23aa548b7b9d28397d430b32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 7
+  height: 3
+  centerOffset: {x: 0, y: 0, z: 0}
+  followOnStart: 0
+  smoothSpeed: 0.125
+--- !u!114 &496108481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 496108470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 733bf13032924b541a2c8f4789418aca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  rotationSpeed: 0
 --- !u!1 &499646884
 GameObject:
   m_ObjectHideFlags: 0
@@ -566,7 +622,7 @@ Transform:
   m_LocalScale: {x: 2.2833, y: 2.2833, z: 2.2833}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1132433640
 MonoBehaviour:
@@ -580,24 +636,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cfc37097b3b8ac4cac7053e7e585300, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abillities:
-  - abilityName: Fire
-    abilityObject: {fileID: 0}
-    abilityCoolDown: 0
-    damagePoints: 0
-  playerData:
-    name: LOYKAS
-    health: 0
-    mana: 0
-    attackPoints: 0
-    armor: 0
-    playerImage: {fileID: 0}
-  playerCamera: {fileID: 0}
-  playerState: 0
-  detection: {fileID: 496108477}
-  detectedObject: 0
-  debuffPoints: 0
-  activeHero: 0
 --- !u!1 &1675198396
 GameObject:
   m_ObjectHideFlags: 0
@@ -610,7 +648,7 @@ GameObject:
   - component: {fileID: 1675198399}
   - component: {fileID: 1675198398}
   - component: {fileID: 1675198397}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Floors
   m_TagString: Untagged
   m_Icon: {fileID: 0}

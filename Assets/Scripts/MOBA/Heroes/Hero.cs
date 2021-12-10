@@ -11,16 +11,16 @@ public class Hero : Player_MasterClass {
     // Update is called once per frame
     void Update() { CheckInput(); }
     public void CheckInput() {
-        if (activeHero) {
-            if (Input.GetMouseButtonDown(0)) {
-                Debug.Log($"INVOKING : {abillities[0].abilityName}");
-                InvokeAbility("Heal");
-            }
-            if (otherHero != null) {
-                if(GetComponent<PlayerDetection>().detectedObject)
-                Debug.Log($"OTHER HERO : {otherHero.playerData.name}");
-            }
-        }
+        //if (activeHero) {
+        //    if (Input.GetMouseButtonDown(0)) {
+        //        Debug.Log($"INVOKING : {abillities[0].abilityName}");
+        //        InvokeAbility("Heal");
+        //    }
+        //    if (otherHero != null) {
+        //        if(GetComponent<PlayerDetection>().detectedObject)
+        //        Debug.Log($"OTHER HERO : {otherHero.playerData.name}");
+        //    }
+        //}
     }
     public override void InflictPhysicalDamage( float damage, Hero hero) {
         base.InflictPhysicalDamage(this.playerData.attackPoints, otherHero);

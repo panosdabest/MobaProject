@@ -6,6 +6,7 @@ public class Player_MasterClass : MonoBehaviourPunCallbacks, IAttacker, IDestruc
     //If someone prefers the struct approach is more than welcome to use it/recommend exclusive use...
     [System.Serializable]
     public struct PlayerData {
+        public int level;
         public string name;
         public float health;
         public float mana;
